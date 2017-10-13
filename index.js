@@ -107,7 +107,7 @@ class FloatLabelTextField extends Component {
             </FloatingLabel>
             <TextFieldHolder withValue={this.state.text}>
               <TextInput {...this.props}
-                ref='input'
+                ref={(input) => this.props.deepRef != null ? this.props.deepRef(input) : 'input'}
                 underlineColorAndroid="transparent"
                 style={[styles.valueText]}
                 defaultValue={this.props.defaultValue}
